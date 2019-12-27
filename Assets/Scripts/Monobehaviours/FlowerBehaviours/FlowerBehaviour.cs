@@ -3,18 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(FlowerData))]
+[Serializable]
+public class FlowerData
+{
+    public FlowerAsset flowerAsset;
+    [HideInInspector]
+    public DateTime timePlanted = DateTime.MaxValue;
+}
+
 public class FlowerBehaviour : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
 
-    [HideInInspector]
     public FlowerData flowerData;
 
     public UnityEventFloat updateTimeEvent;
+
     void Start()
     {
-        flowerData = GetComponent<FlowerData>();
         Plant();
     }
 
