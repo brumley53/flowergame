@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed0e097466656994aba51009eb97ff76, type: 3}
   m_Name: Fraser's Flower
   m_EditorClassIdentifier: 
-  flowerName: 
+  flowerName: Frasers Flower
   flowerStageSpriteArray:
   - {fileID: 21300000, guid: b3e19e85df7ea0045b2688dce9b2f116, type: 3}
   - {fileID: 21300000, guid: 8f148d20d0f9bd9488c87e0541e366d7, type: 3}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Flower Data", menuName = "ScriptableObjects/Flowers/FlowerData")]
-public class FlowerData : ScriptableObject
+public class FlowerAsset : ScriptableObject
 {
     public string flowerName;
     public Sprite[] flowerStageSpriteArray;
