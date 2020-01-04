@@ -9,20 +9,22 @@ public class FlowerData
     public FlowerAsset flowerAsset;
     [HideInInspector]
     public DateTime timePlanted = DateTime.MaxValue;
+
+    public FlowerData(FlowerAsset flowerToPlant)
+    {
+        flowerAsset = flowerToPlant;
+        timePlanted = DateTime.UtcNow;
+    }
 }
 
 public class FlowerBehaviour : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
 
-    public FlowerData flowerData;
+    
+    private FlowerData flowerData = null;
 
     public UnityEventFloat updateTimeEvent;
-
-    void Start()
-    {
-        Plant();
-    }
 
     [ContextMenu("testOpenAppUpdate")]
     void OnApplicationFocus(bool hasFocus)
@@ -34,9 +36,9 @@ public class FlowerBehaviour : MonoBehaviour
         }
     }
 
-    public void Plant()
+    public void Plant(FlowerAsset flowerToPlant)
     {
-        flowerData.timePlanted = DateTime.UtcNow;
+        flowerData = new FlowerData(flowerToPlant);
         UpdateTimeNow();
     }
 

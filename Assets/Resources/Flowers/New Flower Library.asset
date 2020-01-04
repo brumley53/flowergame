@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: New Flower Library
   m_EditorClassIdentifier: 
   flowerTypes:
-  - {fileID: 11400000, guid: 17a6054d62124cb44acc6153d6c4dbdc, type: 2}
+  - {fileID: 11400000, guid: 76f38da3ad22b664082f6acdfa4c1eb8, type: 2}
+  - {fileID: 11400000, guid: 15897a764cc096d4d8cbd119b44a416e, type: 2}
+  - {fileID: 11400000, guid: 8412ee69539667045929484d902bc31f, type: 2}
+  - {fileID: 11400000, guid: 4e0cfa1dc3f4c504294e38b7427f2b92, type: 2}
