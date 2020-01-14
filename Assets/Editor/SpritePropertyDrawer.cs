@@ -20,6 +20,8 @@ public class SpritePropertyDrawer : PropertyDrawer
  
     public override void OnGUI(Rect position, SerializedProperty prop, GUIContent label)
     {
+        int indent = EditorGUI.indentLevel;
+        EditorGUI.indentLevel = 0;
         EditorGUI.BeginProperty(position, label, prop);
  
         if (prop.objectReferenceValue != null)
@@ -39,5 +41,6 @@ public class SpritePropertyDrawer : PropertyDrawer
         }
  
         EditorGUI.EndProperty();
+        EditorGUI.indentLevel = indent;
     }
 }

@@ -19,8 +19,7 @@ public class FlowerData
 
 public class FlowerBehaviour : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
-
+    public SpriteSheetAnimation spriteSheetAnimation;
     
     private FlowerData flowerData = null;
 
@@ -56,6 +55,6 @@ public class FlowerBehaviour : MonoBehaviour
 
     public void UpdateSprite(float timeSincePlanted)
     {
-        spriteRenderer.sprite = flowerData.flowerAsset.GetCurrentSprite(timeSincePlanted);
+        spriteSheetAnimation.setSpriteSheet(flowerData.flowerAsset.GetCurrentSpriteSheet(timeSincePlanted));
     }
 }

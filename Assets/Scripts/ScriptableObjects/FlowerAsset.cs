@@ -2,32 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class SpriteSheet
+{
+    public Sprite[] frames;
+    public float framesPerSecond;
+}
+
 [CreateAssetMenu(fileName = "New Flower Data", menuName = "ScriptableObjects/Flowers/FlowerData")]
 public class FlowerAsset : ScriptableObject
 {
     public string flowerName;
-    public Sprite[] flowerStageSpriteArray;
+    public SpriteSheet[] flowerStageSpriteSheetArray;
     public Sprite teaLeavesSprite;
     public int timeToGrow;
     public AnimationCurve growthCurve = AnimationCurve.Linear(0, 0, 1, 1);
 
-    public Sprite GetCurrentSprite(float timeSincePlanted)
+    public SpriteSheet GetCurrentSpriteSheet(float timeSincePlanted)
     {
         //get percentage grown on a 0 to 1 scale by dividing time since planted by full growth time 
         float time = timeSincePlanted / timeToGrow;
         //adjust time based on the curve to get adjusted growth time then multiply by the number of stages to get growth stage
-        float growthStage = growthCurve.Evaluate(time) * flowerStageSpriteArray.GetUpperBound(0);
+        float growthStage = growthCurve.Evaluate(time) * flowerStageSpriteSheetArray.GetUpperBound(0);
         //Round down to remove decimals and then get the appropriate sprite
-        return flowerStageSpriteArray[Mathf.Min(Mathf.FloorToInt(growthStage),flowerStageSpriteArray.GetUpperBound(0))];
+        return flowerStageSpriteSheetArray[Mathf.Min(Mathf.FloorToInt(growthStage), flowerStageSpriteSheetArray.GetUpperBound(0))];
     }
 
-    public Sprite GetSeed()
+    public SpriteSheet GetSeed()
     {
-        return flowerStageSpriteArray[0];
+        return flowerStageSpriteSheetArray[0];
     }
 
-    public Sprite GetFullBloom()
+    public SpriteSheet GetFullBloom()
     {
-        return flowerStageSpriteArray[flowerStageSpriteArray.GetUpperBound(0)];
+        return flowerStageSpriteSheetArray[flowerStageSpriteSheetArray.GetUpperBound(0)];
     }
 }
