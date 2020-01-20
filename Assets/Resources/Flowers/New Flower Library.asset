@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowerTypes:
   - {fileID: 11400000, guid: 76f38da3ad22b664082f6acdfa4c1eb8, type: 2}
+  - {fileID: 11400000, guid: edcafb1ef4ac8334288aec201a6e3612, type: 2}
