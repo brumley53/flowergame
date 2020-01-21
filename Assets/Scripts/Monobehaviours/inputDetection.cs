@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class inputDetection : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class inputDetection : MonoBehaviour
 
     void OnMouseUpAsButton()
     {
-        Debug.Log("WOMP");
-        inputEvent.Invoke();
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            inputEvent.Invoke();
+        }
     }
 }

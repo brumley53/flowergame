@@ -15,13 +15,14 @@ public class PlantingMenu : MonoBehaviour
         foreach (FlowerAsset flowerAsset in flowerLibrary.flowerTypes)
         {
             Button tempButton = Instantiate(seedButtonPrefab, menuContentTransform);
-            tempButton.onClick.AddListener(delegate { potToFill.Plant(flowerAsset); });
+            tempButton.image.sprite = flowerAsset.GetSeed().frames[0];
+            tempButton.onClick.AddListener(delegate { potToFill.Plant(flowerAsset); CloseMenu(); });
         }
     }
 
     void CloseMenu()
     {
-
+        Destroy(gameObject);
     }
 
     public void OnEnable()

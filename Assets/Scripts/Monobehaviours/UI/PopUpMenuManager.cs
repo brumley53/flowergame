@@ -7,4 +7,9 @@ using UnityEngine;
 public class PopUpMenuManager: MonoBehaviour
 {
     public static event Action CloseMenus = delegate { };
+
+    public void CallCloseMenuEvent()
+    {
+        CloseMenus.Invoke();
+    }
 }

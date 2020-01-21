@@ -18,8 +18,9 @@ public class PlantingMenuManager : PopUpMenuManager
 
     public void OpenPlantingMenu(FlowerBehaviour potToFill)
     {
+        CallCloseMenuEvent();
         Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(Camera.main, potToFill.transform.position);
-        PlantingMenu tempPlantingMenu = Instantiate(plantingMenuPrefab, screenPoint, plantingMenuPrefab.transform.rotation, transform);
+        PlantingMenu tempPlantingMenu = Instantiate(plantingMenuPrefab, screenPoint + new Vector2(0,200), plantingMenuPrefab.transform.rotation, transform);
         tempPlantingMenu.FillMenu(potToFill);
     }
 }
