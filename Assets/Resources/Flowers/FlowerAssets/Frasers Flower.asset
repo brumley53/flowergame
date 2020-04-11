@@ -18,9 +18,9 @@ MonoBehaviour:
     - {fileID: 21300000, guid: b3e19e85df7ea0045b2688dce9b2f116, type: 3}
     framesPerSecond: 12
   - frames:
-    - {fileID: 21300000, guid: 8f148d20d0f9bd9488c87e0541e366d7, type: 3}
-    - {fileID: 21300000, guid: ece2b3d0a77edf142aa4582a176a2f23, type: 3}
-    framesPerSecond: 6
+    - {fileID: 8597265555138175851, guid: fc0391d4a824b09478baf9b87b9baf7f, type: 3}
+    - {fileID: 3990347165917064005, guid: fc0391d4a824b09478baf9b87b9baf7f, type: 3}
+    framesPerSecond: 3
   teaLeavesSprite: {fileID: 21300000, guid: ece2b3d0a77edf142aa4582a176a2f23, type: 3}
   timeToGrow: 5
   growthCurve:
